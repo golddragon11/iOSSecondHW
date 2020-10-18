@@ -310,31 +310,8 @@ extension Image {
     }
 }
 
-struct test: View {
-    var body: some View {
-        TabView {
-            lakersView()
-            .tabItem {
-                Text("Lakers")
-                Image("Lakers_Logo")
-            }
-            heatView()
-            changeAppIcon()
-            .tabItem {
-                Image(systemName: "ellipsis.circle")
-                    .resizable()
-                    .frame(width: 25, height: 25)
-                Text("More")
-            }
-        }
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-//        test()
-//        playerDetail(players: Lakers_Players[0])
-//            .preferredColorScheme(.dark)
     }
 }
