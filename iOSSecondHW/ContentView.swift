@@ -279,12 +279,16 @@ struct changeAppIcon: View {
 
 struct playerDetail: View {
     let players:players
+    @State private var show = false
     var body: some View {
         ScrollView {
             VStack {
                 Group {
-                    Image(players.name)
-                        .scaledToFill()
+                    if show {
+                        Image(players.name)
+                            .scaledToFill()
+                            .transition(.slide)
+                    }
                     Text("\(players.name) ").font(.title) + Text("\(players.number)").font(.title).foregroundColor(.yellow)
                     Text("Height: \(players.height)\"")
                     Text("Position: \(players.position)")
@@ -292,7 +296,11 @@ struct playerDetail: View {
                     Text("Years Pro: \(players.years_pro)")
                     Text("Weight: \(players.weight) lbs")
                         .padding(.bottom)
+                    
                 }
+                
+                .animation(.easeIn(duration: 1))
+                .onAppear { self.show = true }
             }
         }
         .navigationTitle(Text(players.name))
