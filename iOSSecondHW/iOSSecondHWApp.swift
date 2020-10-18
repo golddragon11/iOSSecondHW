@@ -4,7 +4,7 @@ import SwiftUI
 struct iOSSecondHWApp: App {
     var body: some Scene {
         WindowGroup {
-            test()
+            ContentView()
         }
     }
 }

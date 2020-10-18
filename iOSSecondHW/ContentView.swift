@@ -6,10 +6,6 @@ struct ContentView: View {
     var body: some View {
         TabView {
             lakersView()
-            .tabItem {
-                Text("Lakers")
-                Image("Lakers_Logo")
-            }
             heatView()
             changeAppIcon()
                 .tabItem {
@@ -79,6 +75,10 @@ struct lakersView: View {
                 }
             }
             .navigationTitle("Los Angelas Lakers")
+        }
+        .tabItem {
+            Text("Lakers")
+            Image("Lakers_Logo")
         }
     }
 }
